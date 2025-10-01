@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import React, { useState } from 'react'; // Xóa useEffect vì không dùng
+import React, { useState } from 'react'; 
 import './App.css';
 
 // Bài 1
