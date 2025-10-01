@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import React, { useState } from 'react'; 
 import './App.css';
-
 // Bài 1
 function TextCounter() {
   const [text, setText] = useState('');
   const maxLength = 100;
-
   const handleChange = (e) => {
     const newText = e.target.value;
     if (newText.length <= maxLength) {
@@ -14,7 +12,6 @@ function TextCounter() {
       setText(newText);
     }
   };
-
   return (
     <div className="component">
       <h2>Bộ đếm ký tự</h2>
@@ -32,7 +29,6 @@ function TextCounter() {
     </div>
   );
 }
-
 // Bài 2
 function TrafficLight() {
   const [currentLight, setCurrentLight] = useState('red');
@@ -46,7 +42,6 @@ function TrafficLight() {
       setCurrentLight('red');
     }
   }
-
   return (
     <div className="component">
       <h2>Đèn giao thông</h2>
@@ -63,7 +58,6 @@ function TrafficLight() {
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
-
   function handleAddTodo() {
     if (inputValue.trim()) {
       const newTodos = todos.slice();
@@ -72,12 +66,10 @@ function TodoList() {
       setInputValue('');
     }
   }
-
   function handleDeleteTodo(index) {
     const newTodos = todos.filter((item, i) => i !== index);
     setTodos(newTodos);
   }
-
   return (
     <div className="component">
       <h2>Danh sách công việc</h2>
@@ -98,14 +90,12 @@ function TodoList() {
     </div>
   );
 }
-
 // Bài 4
 function ProductItem(props) {
   const id = props.id;
   const name = props.name;
   const price = props.price;
   const onAdd = props.onAdd;
-
   return (
     <div className="product-item">
       <p>Sản phẩm: {name}</p>
@@ -114,29 +104,24 @@ function ProductItem(props) {
     </div>
   );
 }
-
 function ShoppingCart() {
   const [products] = useState([
     { id: 1, name: 'Sản phẩm A', price: 1000 },
     { id: 2, name: 'Sản phẩm B', price: 2000 },
     { id: 3, name: 'Sản phẩm C', price: 3000 },
   ]);
-
   const [cart, setCart] = useState([]);
-
   function handleAddToCart(product) {
     const newCart = cart.slice();
     newCart.push(product);
     setCart(newCart);
   }
-
   const totalItems = cart.length;
 
   let totalPrice = 0;
   for (let i = 0; i < cart.length; i++) {
     totalPrice = totalPrice + cart[i].price;
   }
-
   return (
     <div className="component">
      
@@ -153,7 +138,6 @@ function ShoppingCart() {
     </div>
   );
 }
-
 // Bài 5: Form Đăng ký
 const FormRegister = () => {
     const [name, setName] = useState("")
@@ -172,7 +156,6 @@ const FormRegister = () => {
             })
         }
     }
-
     return ( 
         <div className="form-register">
             <h1>Form Đăng ký</h1>
@@ -197,8 +180,6 @@ const FormRegister = () => {
         </div>
      );
 }
-
-// Điều hướng
 function NavButtons() {
   const navigate = useNavigate();
   const buttonStyle = { border: "2px solid #12100fff", borderRadius: "8px", padding: "10px 24px", background: "#fff", cursor: "pointer", marginRight: "10px", fontSize: "16px" };
@@ -212,7 +193,6 @@ function NavButtons() {
     </div>
   );
 }
-
 function App() {
   return (
     <BrowserRouter>
@@ -227,5 +207,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
