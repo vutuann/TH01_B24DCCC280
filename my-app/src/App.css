@@ -1,0 +1,68 @@
+.component {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 10px;
+}
+
+.light.red { background-color: red; }
+.light.yellow { background-color: yellow; }
+.light.green { background-color: green; }
+
+button {
+
+  padding: 5px 7px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input {
+  padding: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.submitted-data {
+  margin-top: 20px;
+}
+
+.product-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
